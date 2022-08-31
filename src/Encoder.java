@@ -5,6 +5,7 @@ public class Encoder {
                     '6','7','8','9','(',')','*','+',',','-','.','/'};
 
     public String encode(String plainText) {
+        if (plainText == null || plainText.equals("")) return "";
         StringBuilder sb = new StringBuilder();
         int offset = (int) (Math.random() * table.length);
         sb.append(table[offset]);
@@ -21,6 +22,7 @@ public class Encoder {
     }
 
     public String decode(String encodedText) {
+        if (encodedText == null || encodedText.equals("")) return "";
         StringBuilder sb = new StringBuilder();
         char offsetChar = encodedText.charAt(0);
         encodedText = encodedText.substring(1);
@@ -49,7 +51,7 @@ public class Encoder {
     //test
     public static void main(String[] args) {
         Encoder e = new Encoder();
-        String encoded = e.encode("HELLO WORLD");
+        String encoded = e.encode("");
         System.out.println(encoded);
         String original = e.decode(encoded);
         System.out.println(original);
