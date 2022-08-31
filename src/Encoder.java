@@ -4,6 +4,11 @@ public class Encoder {
                     'Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5',
                     '6','7','8','9','(',')','*','+',',','-','.','/'};
 
+    /**
+     * encode the plainText
+     * @param plainText
+     * @return encoded text
+     */
     public String encode(String plainText) {
         if (plainText == null || plainText.equals("")) return "";
         StringBuilder sb = new StringBuilder();
@@ -21,6 +26,11 @@ public class Encoder {
         return sb.toString();
     }
 
+    /**
+     * decode the encodedText to original text
+     * @param encodedText
+     * @return original text
+     */
     public String decode(String encodedText) {
         if (encodedText == null || encodedText.equals("")) return "";
         StringBuilder sb = new StringBuilder();
@@ -39,6 +49,11 @@ public class Encoder {
         return sb.toString();
     }
 
+    /**
+     * get the index of the character in the table
+     * @param c
+     * @return index
+     */
     private int getIndex(char c) {
         for(int i = 0;i < table.length;i++) {
             if(table[i] == c) {
